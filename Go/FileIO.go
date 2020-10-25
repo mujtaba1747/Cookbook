@@ -58,7 +58,7 @@ func readLineByLine2(fname string) (lines []string, err error) {
 func main() {
 	// fmt.Println(os.Stdout) // os.Stdout is a *os.File pointing to /dev/stdout
 
-	writeString("/dev/stdout", "This program behaves like command tee if path is stdin\n") // Will Work only on Linux, use os.Stdin for safety // same as io.WriteString(os.Stdout, message) 
+	writeString("/dev/stdout", "This program behaves like command tee if path is stdin\n") // Will Work only on Linux, use os.Stdin for portablility // same as io.WriteString(os.Stdout, message) 
 
 	lines, _ := readLineByLine("/dev/stdin") // Does work Similar to tee // You can have ANY file instead of stdin as well, in case of stdin use Ctrl+D on Linux to stop reading
 	for _, str := range lines {
